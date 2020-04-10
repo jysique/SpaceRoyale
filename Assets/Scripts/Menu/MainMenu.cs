@@ -8,13 +8,26 @@ using UnityEngine;
         [SerializeField] private GameObject findOpponentPanel = null;
         [SerializeField] private GameObject waitingStatusPanel = null;
         [SerializeField] private TextMeshProUGUI waitingStatusText = null;
+        [SerializeField] private TextMeshProUGUI statusPlayersText = null;
+        int playerCount ;
 
+        bool isCreateRoom = false;
         private bool isConnecting = false;
 
         private const string GameVersion = "0.1";
-        private const int MaxPlayersPerRoom = 1;
+        private const int MaxPlayersPerRoom = 2;
 
         private void Awake() => PhotonNetwork.AutomaticallySyncScene = true;
+        private void Start() {
+            
+        }
+        private void Update() {
+            if(isCreateRoom){
+                statusPlayersText.text = playerCount.ToString() + "/" + MaxPlayersPerRoom.ToString();
+            }else{
+                statusPlayersText.text = " ";
+            }
+        }
 
         public void FindOpponent()
         {
@@ -24,7 +37,7 @@ using UnityEngine;
             waitingStatusPanel.SetActive(true);
 
             waitingStatusText.text = "Searching...";
-
+            
             if (PhotonNetwork.IsConnected)
             {
                 PhotonNetwork.JoinRandomRoom();
@@ -65,11 +78,14 @@ using UnityEngine;
         {
             Debug.Log("Client successfully joined a room");
 
-            int playerCount = PhotonNetwork.CurrentRoom.PlayerCount;
+            playerCount = PhotonNetwork.CurrentRoom.PlayerCount;
 
             if(playerCount != MaxPlayersPerRoom)
             {
+                string csqsq = playerCount.ToString();
                 waitingStatusText.text = "Waiting For Opponent";
+                isCreateRoom = true;
+
                 Debug.Log("Client is waiting for an opponent");
             }
             else
@@ -80,7 +96,7 @@ using UnityEngine;
             }
             
         }
-
+        
         public override void OnPlayerEnteredRoom(Player newPlayer)
         {
             if(PhotonNetwork.CurrentRoom.PlayerCount == MaxPlayersPerRoom)

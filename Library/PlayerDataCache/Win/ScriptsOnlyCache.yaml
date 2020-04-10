@@ -1,10 +1,13 @@
 ScriptsOnlyBuild:
   usedScripts:
     Assembly-CSharp.dll:
+    - Billboard
     - MainMenu
     - MovementScript
     - PlayerNameInput
+    - PlayerNameTag
     - PlayerSpawner
+    - Weapon
     PhotonUnityNetworking.dll:
     - Photon.Pun.PhotonTransformView
     - Photon.Pun.PhotonView
@@ -56,7 +59,11 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 48
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
     - Class: 64
+      Script: {instanceID: 0}
+    - Class: 65
       Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
@@ -65,24 +72,38 @@ ScriptsOnlyBuild:
     - Class: 108
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 12132}
+      Script: {instanceID: 11184}
     - Class: 114
-      Script: {instanceID: 13074}
+      Script: {instanceID: 12136}
     - Class: 114
-      Script: {instanceID: 14506}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 14530}
+      Script: {instanceID: 12704}
     - Class: 114
-      Script: {instanceID: 14544}
+      Script: {instanceID: 13084}
     - Class: 114
-      Script: {instanceID: 14548}
+      Script: {instanceID: 14426}
     - Class: 114
-      Script: {instanceID: 14552}
+      Script: {instanceID: 14448}
     - Class: 114
-      Script: {instanceID: 16102}
+      Script: {instanceID: 14462}
     - Class: 114
-      Script: {instanceID: 16396}
+      Script: {instanceID: 14466}
+    - Class: 114
+      Script: {instanceID: 14470}
+    - Class: 114
+      Script: {instanceID: 28456}
+    - Class: 114
+      Script: {instanceID: 28458}
+    - Class: 114
+      Script: {instanceID: 28460}
+    - Class: 114
+      Script: {instanceID: 28462}
+    - Class: 114
+      Script: {instanceID: 28464}
     - Class: 115
+      Script: {instanceID: 0}
+    - Class: 128
       Script: {instanceID: 0}
     - Class: 136
       Script: {instanceID: 0}
@@ -91,6 +112,12 @@ ScriptsOnlyBuild:
     - Class: 157
       Script: {instanceID: 0}
     - Class: 196
+      Script: {instanceID: 0}
+    - Class: 222
+      Script: {instanceID: 0}
+    - Class: 223
+      Script: {instanceID: 0}
+    - Class: 224
       Script: {instanceID: 0}
     Assets/Scenes/Scene_MainMenu.unity:
     - Class: 1
@@ -113,6 +140,10 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 49
       Script: {instanceID: 0}
+    - Class: 54
+      Script: {instanceID: 0}
+    - Class: 65
+      Script: {instanceID: 0}
     - Class: 81
       Script: {instanceID: 0}
     - Class: 104
@@ -126,39 +157,45 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11404}
     - Class: 114
-      Script: {instanceID: 11426}
+      Script: {instanceID: 11428}
     - Class: 114
-      Script: {instanceID: 11618}
+      Script: {instanceID: 11620}
     - Class: 114
-      Script: {instanceID: 11830}
+      Script: {instanceID: 11832}
     - Class: 114
-      Script: {instanceID: 11860}
+      Script: {instanceID: 11862}
     - Class: 114
-      Script: {instanceID: 12132}
+      Script: {instanceID: 12136}
     - Class: 114
-      Script: {instanceID: 12246}
+      Script: {instanceID: 12250}
     - Class: 114
-      Script: {instanceID: 12298}
+      Script: {instanceID: 12304}
     - Class: 114
-      Script: {instanceID: 12438}
+      Script: {instanceID: 12446}
     - Class: 114
-      Script: {instanceID: 12482}
+      Script: {instanceID: 12490}
     - Class: 114
-      Script: {instanceID: 12496}
+      Script: {instanceID: 12504}
     - Class: 114
-      Script: {instanceID: 12696}
+      Script: {instanceID: 12704}
     - Class: 114
-      Script: {instanceID: 12748}
+      Script: {instanceID: 12756}
     - Class: 114
-      Script: {instanceID: 12764}
+      Script: {instanceID: 12772}
     - Class: 114
-      Script: {instanceID: 12926}
+      Script: {instanceID: 12934}
     - Class: 114
-      Script: {instanceID: 13074}
+      Script: {instanceID: 13084}
     - Class: 114
-      Script: {instanceID: 13146}
+      Script: {instanceID: 13156}
     - Class: 114
-      Script: {instanceID: 16102}
+      Script: {instanceID: 28456}
+    - Class: 114
+      Script: {instanceID: 28458}
+    - Class: 114
+      Script: {instanceID: 28462}
+    - Class: 114
+      Script: {instanceID: 28464}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -570,7 +607,7 @@ ScriptsOnlyBuild:
     className: PointedAtGameObjectInfo
   - hash:
       serializedVersion: 2
-      Hash: a8247955a0bc1c929bc61234ff0f3c41
+      Hash: 5693ba16d976d5d6748f838ee6214d37
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MainMenu
@@ -840,16 +877,34 @@ ScriptsOnlyBuild:
     className: PlayableTrack
   - hash:
       serializedVersion: 2
-      Hash: 131f425607820796717868b02ff18299
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: MovementScript
+    className: Billboard
+  - hash:
+      serializedVersion: 2
+      Hash: dd74fd4029b11804b9352f233617c3c0
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: PlayerNameTag
   - hash:
       serializedVersion: 2
       Hash: d1f07c9e64b7817e6271f80bb03de25f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: PlayerSpawner
+  - hash:
+      serializedVersion: 2
+      Hash: 4efc99e0b01831da0890a16e6091b03c
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Weapon
+  - hash:
+      serializedVersion: 2
+      Hash: cf433dfa235d55d254a2f733c034bfa5
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MovementScript
   platform: 5
   scenePathNames:
   - Assets/Scenes/Scene_MainMenu.unity
